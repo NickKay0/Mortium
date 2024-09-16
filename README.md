@@ -1,7 +1,5 @@
 # Mortium: An Adventurer's Handbook
 ![Quick Demo](./static/images/screenshots/quick_demo1.gif)
-#### Video Demo:  <URL HERE>
-#### Description:
 ## Welcome adventurer, to **Mortium**.
 
 Mortium is my final project submission for **2024 Harvard CS50's** course. It's a *(medieval fantasy themed)* web application which aims to lighten travelers like *thyself*, from the burden of keeping track of all of your important quests and goals so you can truly focus on the most interesting aspect, **ADVENTURING**! Mortium offers quite a few features like Journal, Quests as well as keeping track of your completed tasks and thou level so you can see your progress in a single look. 
