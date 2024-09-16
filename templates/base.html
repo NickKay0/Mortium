@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Mortium{% block title %}{% endblock %}</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="icon" href="../static/images/icon.png" type="image/png">
+
+        <link rel="preload" href="../static/images/background.jpg" as="image">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+        <!-- /Fonts -->
+    </head>
+
+    <body>
+        <h1>Mortium: An Adventurer's Handbook</h1>
+
+        {% block main %}
+            <div class="navbar">
+                <div class="navbar-container">
+                    <ul class="links">
+                        <li class="home-li"><a href="/home"><img src="../static/images/home.png" width="48px" height="48px"></a></li>
+                        {% if journal %}
+                            <li class="active"><a href="/journal"><p>Journal</p></a></li>
+                        {% else %}
+                            <li><a href="/journal"><p>Journal</p></a></li>
+                        {% endif %}
+                        
+                        {% if quests %}
+                            <li class="active"><a href="/quests"><p>Quests</p></a></li>
+                        {% else %}
+                            <li><a href="/quests"><p>Quests</p></a></li>
+                        {% endif %}
+
+                        {% if about %}
+                            <li class="active"><a href="/about"><p>About</p></a></li>
+                        {% else %}
+                            <li><a href="/about"><p>About</p></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logout">
+                <div class="logout-container">
+                    <div class="logout-info">
+                        <img src="../static/images/user.png" width="24px" height="24px">
+                        <p>{{ username }}</p>                        
+                    </div>
+
+                    <form action="/login" method="get">
+                        <button><img src="../static/images/quit.png" width="24" height="24px">Logout</button>
+                    </form>
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>

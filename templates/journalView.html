@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}: View Journal Entry{% endblock %}
+
+{% block content %}
+    <div class="journal">
+        <div class="journal-container">
+            <form method="post" action="/journal/{{ id }}">
+                <div class="input-container">
+                    <input class="title-input" spellcheck="false" type="text" name="title" placeholder="Title" required maxlength="50" autocomplete="off" value="{{ entry[0] }}">
+                    <textarea class="content-input" spellcheck="false" type="text" name="contents" placeholder="...">{{ entry[1] }}</textarea>
+                </div>
+
+                <hr>
+
+                <div class="journal-button-container">
+                    <button name="action" value="edit"><img src="../static/images/quil.png" width="24px" height="24px">Save Entry</button>
+                    <button class="delete-btn" name="action" value="delete"><img src="../static/images/delete.png" width="24px" height="24px">Scrap Entry</button>
+                </div>
+
+                {% if error_msg %}
+                    <p class="error-msg">{{error_msg}}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+    <div class="back">
+        <div class="back-container">
+            <form method="post">
+                <button name="action" value="back" type="submit"><img src="../static/images/back.png" width="24px" height="24px">Back</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

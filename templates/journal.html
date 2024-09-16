@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}: Journal{% endblock %}
+
+{% block content %}
+    <div class="journal">
+        <div class="journal-container">
+            {% for row in entries %}
+                <a href="/journal/{{ row[2] }}">
+                    <div class="note">
+                        <p>{{ row[0] }}</p>
+                    </div>
+                </a>
+            {% else %}
+                <p>No journal entries yet.</p>
+            {% endfor %}
+
+            <hr>
+
+            <form method="get" action="/journalAdd">
+                <button type="submit"><img src="../static/images/quil.png" width="24px" height="24px">Add Entry</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

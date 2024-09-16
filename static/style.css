@@ -1,0 +1,469 @@
+.baskervville-sc-regular {
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.tangerine-regular {
+    font-family: "Tangerine", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.tangerine-bold {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+}  
+
+  
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Baskervville SC", serif;
+}
+
+body{
+    height: 100vh;
+    background-color: #000;
+    background-image: url("./images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 100px;
+    color: #fff;
+    cursor: default;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000;
+}
+
+h2{
+    font-weight: 700;
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+    cursor: default;
+}
+
+p{
+    cursor: default;
+}
+
+/* Home screen navbar */
+.navbar{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    padding-top: 25px;
+}
+
+.navbar ul{
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar li{
+    /* padding: 15px; */
+    text-align: center;
+    float: left;
+}
+
+
+.navbar li:not(:last-child){
+    margin-right: 50px;
+}
+
+.navbar li:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.40); 
+}
+
+.navbar-container{
+    background-color: rgba(0,0,0,0.65); 
+}
+
+.links p{
+    padding: 15px;
+    cursor: pointer;
+}
+.links a{
+    text-decoration: none;
+}
+.links a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+.active{
+    text-decoration: underline;
+}
+/* /Home screen navbar */
+
+/* Login screen */
+.login{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    color: white;
+}
+
+.login-container{
+    background-color: rgba(0,0,0,0.75);
+    padding: 15px 10px 15px 10px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.login-container input{
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-radius: 0.25rem;
+    border: none;
+    background-color: wheat;
+}
+
+.login-container input:focus{
+    outline: none;
+}
+
+.login-container button{
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding: 5px 15px 5px 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.login p{
+    font-size: 20px;
+}
+
+.login a{
+    text-decoration: none;
+    color: #544ceb;
+}
+.login a:hover{
+    color: #423bb8;
+    transition: 150ms ease-out;
+}
+
+.error-msg{
+    color: red;
+}
+
+.login hr{
+    margin: 5px 0 10px 0;
+    border: white 1px solid;
+    border-radius: 1rem;
+}
+/* /Login screen */
+
+/* Journal */
+.journal{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.journal-container{
+    min-width: 500px;
+    max-width: 1250px;
+    min-height: 100px;
+    width: fit-content;
+    background-color: rgba(0,0,0,0.65); 
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    border: 2px solid rgba(0,0,0,0.80);
+}
+
+.journal-container a{
+    text-decoration: none;
+    color: inherit;
+}
+.journal-container a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+.note{
+    background-color: rgba(0,0,0,0.65);
+    border: 3px solid rgba(0,0,0,0.80);
+    margin-bottom: 15px;
+    padding: 5px;
+}
+.note:hover, .journal button:hover, .back-container button:hover{
+    background-color: rgba(0,0,0,0.8);
+    transition: 150ms ease-out;
+}
+
+.note p{
+    cursor: pointer;
+}
+
+.journal button, .back-container button, .logout-container button{
+    color: white;
+    background-color: rgba(0,0,0,0.65);
+    border: 3px solid rgba(0,0,0,0.80);
+    font-size: 25px;
+    margin-top: 15px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.journal hr{
+    border: 1px solid white;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container input,textarea{
+    display: block;
+    margin-bottom: 15px;
+    background-color: rgba(0,0,0,0.65);
+    border: rgba(0,0,0,0.80);
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+    min-width: 500px;
+}
+
+.input-container input:focus, textarea:focus{
+    outline: none;
+}
+
+.content-input{
+    min-height: 500px;
+    resize: none;
+}
+
+.journal-button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.journal-button-container .delete-btn{
+    background-color: rgba(70, 0, 0, 0.65);
+    border: 1px solid rgba(139, 0, 0, 0.8);
+}
+.journal-button-container .delete-btn:hover{
+    background-color: rgba(36, 0, 0, 0.65);
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* /Journal */
+
+/* Quests */
+.quests-input-container{
+    display: block;
+}
+
+.quests-input-container select{
+    background-color: rgba(0,0,0,0.65);
+    color: white;
+    border: none;
+    font-size: 25px;
+    padding: 5px;
+}
+
+.quests-input-container button{
+    display: inline;
+    /* margin-right: 20px;
+    margin-left: 40px; */
+}
+
+.quests-input-container button img{
+    margin-right: 10px;
+}
+
+.quests-input-container input{
+    margin-bottom: 15px;
+    background-color: rgba(0,0,0,0.65);
+    border: rgba(0,0,0,0.80);
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+    min-width: 550px;
+}
+.quests-input-container input:focus{
+    outline: none;
+}
+
+.journal h2{
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.journal hr{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border: 2px solid rgba(0,0,0,0.65);
+}
+
+.active-quests, .completed-quests{
+    gap: 15px;
+    min-height: 150px;
+    /* width: 700px; */
+    background-color: rgba(0,0,0,0.65); 
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.completed-quests{
+    max-height: 250px;
+}
+
+.completed-quests{
+    text-decoration: line-through;
+    color: gray;
+}
+
+.quest button{
+    white-space: normal;
+    word-wrap: break-word;
+    display: inline;
+    max-width: 700px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quest button:hover{
+    background-color: rgba(0,0,0,0.25);
+}
+
+.completed{
+    max-width: 700px;
+    width: fit-content;
+    background-color: rgba(0,0,0,0.65); 
+    white-space: normal;
+    word-wrap: break-word;
+    margin-bottom: 15px;
+}
+/* /Quests */
+
+/* Logout */
+.logout {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.logout-container{
+    margin-right: 10px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-container p{
+    color:white;
+    font-size: 25px;
+}
+
+.logout-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logout-info img{
+    margin-right: 10px;
+}
+/* /Logout */
+
+/* About */
+.about-container{
+    width: 800px;
+}
+
+.about-container h3{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+.signature{
+    font-family: "Tangerine", cursive;
+    font-size: 40px;
+}
+
+.about{
+    display: inline;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    gap: 50px;
+}
+/* /About */
+
+/* Home */
+.hero{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home{
+    display: inline;
+}
+
+.home h2{
+    text-align: center;
+}
+
+.home hr{
+    margin-top: 0px;
+    border: 1px solid white;
+}
+
+.stats-segment{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+.stats-segment:not(:last-child){
+    margin-bottom: 25px;
+}
+
+.stats-segment p{
+    background-color: rgba(0,0,0,0.65);
+    padding: 5px;
+}
+/* /Home */

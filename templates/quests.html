@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}: Quests{% endblock %}
+
+{% block content %}
+    <div class="journal">
+        <div class="journal-container">
+            <form class="quests-input-container" method="post" action="/quests">
+                <input spellcheck="false" type="text" name="quest" placeholder="Add Quest" required autocomplete="off">
+                
+                <select name="difficulty">
+                    <option value="-1" disabled selected>Difficulty</option>
+                    {% for row in difficulties %}
+                        <option value="{{ row[0] }}">{{ row[1] }}</option>
+                    {% endfor %}
+
+                    <!--  Throws an error in vscode -->
+                    <!-- {% for row in difficulties %}
+                        <option value="{{ row[0] }}" {% if row[2] %} style="color: {{ row[2] | default('white') }}" {% endif %}>{{ row[1] }}</option>
+                    {% endfor %} -->
+                </select>
+
+                <br>
+
+                <button type="submit"><img src="../static/images/quest_add.png" width="24px" height="24px">Add</button>
+            </form>
+
+            <h2>Active</h2>
+            <div class="active-quests">
+                {% for row in active_quests %}
+                    <form action="/complete/{{ row[1] }}" method="post">
+                        <div class="quest">
+                            {% if row[2] %}
+                            <button type="submit"><img src="../static/images/completed-white.png" width="24px" height="24px">{{ row[0] }}<img src="../static/images/difficulty/{{row[2]}}" width="24px" height="24px"></button>
+                            {% else %}
+                                <button type="submit"><img src="../static/images/completed-white.png" width="24px" height="24px">{{ row[0] }}</button>
+                            {% endif %}
+                        </div>
+                    </form>
+                {% endfor %}
+            </div>
+
+            <hr>
+
+            <h2>Completed</h2>
+            <div class="completed-quests">
+                {% for row in completed_quests %}
+                    <div class="quest">
+                        <div class="completed">
+                            <p>{{ row[0] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <form method="post" action="/clear-quests">
+                <button type="submit"><img src="../static/images/delete.png" width="24px" height="24px"> Clear Completed Quests</button>
+            </form>
+
+            {% if error_msg %}
+                <p class="error-msg">{{error_msg}}</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}: New Journal Entry{% endblock %}
+
+{% block content %}
+    <div class="journal">
+        <div class="journal-container">
+            <form method="post" action="/journalAdd">
+                <div class="input-container">
+                    <input class="title-input" spellcheck="false" type="text" name="title" placeholder="Title" required maxlength="50" autocomplete="off">
+                    <textarea class="content-input" spellcheck="false" type="text" name="contents" placeholder="..."></textarea>
+                </div>
+
+                <hr>
+
+                <button><img src="../static/images/quil.png" width="24px" height="24px">Save Entry</button>
+
+                {% if error_msg %}
+                    <p class="error-msg">{{error_msg}}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="back-container">
+            <form method="post">
+                <button name="action" value="back" type="submit"><img src="../static/images/back.png" width="24px" height="24px">Back</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}: Home{% endblock %}
+
+{% block content %}
+    <div class="journal">
+        <div class="journal-container home">
+            <h2>Home</h2>
+            
+            <hr>
+
+            <table class="home-table">
+                <tr>
+                    <td>
+                        <div class="hero">
+                            <img src="../static/images/user.png" width="100px" height="100px">
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="stats">
+                            <div class="stats-container">
+                                <div class="stats-segment">
+                                    <p><u>Name:</u> {{ username }}</p>
+                                    <p><u>Level:</u> {{ stats[3] }}</p>
+                                </div>
+                                
+                                <div class="stats-segment">
+                                    <p><u>Total XP:</u> {{ stats[0] }}</p>
+                                    <p><u>XP For Next Level:</u> {{ stats[1] }}</p>
+                                </div>
+            
+                                <div class="stats-segment">
+                                    <p><u>Total Tasks Completed:</u> {{ stats[2] }}</p>
+                                </div>
+
+                                <div class="stats-segment">
+                                    <form method="get" action="/change-password">
+                                        <button type="submit"><img src="../static/images/settings.png" width="24px" height="24px">Change Password</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}
